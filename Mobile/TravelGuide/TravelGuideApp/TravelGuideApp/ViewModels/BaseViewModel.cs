@@ -14,32 +14,32 @@ namespace TravelGuideApp.ViewModels
             NavigationService = navigationService;
         }
 
-        public void Destroy()
+        public virtual void Destroy()
         {
 
         }
 
-        public void Initialize(INavigationParameters parameters)
+        public virtual void Initialize(INavigationParameters parameters)
         {
             
         }
 
-        public void OnAppearing()
+        public virtual void OnAppearing()
         {
            
         }
 
-        public void OnDisappearing()
+        public virtual void OnDisappearing()
         {
              
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
              
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
             
         }

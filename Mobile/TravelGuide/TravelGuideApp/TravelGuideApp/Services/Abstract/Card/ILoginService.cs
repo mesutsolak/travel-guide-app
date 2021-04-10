@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using TravelGuideApp.Models;
+using TravelGuideApp.Models.Card;
 
-namespace TravelGuideApp.Services.Abstract
+namespace TravelGuideApp.Services.Abstract.Card
 {
     public interface ILoginService
     {

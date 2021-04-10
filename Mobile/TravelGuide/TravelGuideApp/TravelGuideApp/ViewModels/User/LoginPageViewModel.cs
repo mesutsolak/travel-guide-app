@@ -1,10 +1,10 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using Prism.Services;
 using System.Windows.Input;
-using TravelGuideApp.Models;
-using TravelGuideApp.Services.Abstract;
+using TravelGuideApp.Models.Card;
+using TravelGuideApp.Services.Abstract.Card;
 using TravelGuideApp.Views;
-using Xamarin.Forms;
 
 namespace TravelGuideApp.ViewModels
 {
@@ -70,21 +70,26 @@ namespace TravelGuideApp.ViewModels
 
         #region Commands
 
-        public ICommand LoginCommand => new Command(() =>
+        public ICommand LoginCommand => new DelegateCommand(() =>
         {
 
 
         });
 
-        public ICommand LoginClearCommand => new Command(() =>
+        public ICommand LoginClearCommand => new DelegateCommand(() =>
         {
             LoginModel.Clear();
         });
 
 
-        public ICommand RegisterCommand => new Command<User>(async (user) =>
+        public ICommand RegisterCommand => new DelegateCommand<User>(async (user) =>
         {
             await _navigationService.NavigateAsync(nameof(RegisterPage));
+        });
+
+        public ICommand ForgetPassword => new DelegateCommand(() =>
+        {
+
         });
 
 

@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
-using TravelGuideApp.Models;
-using TravelGuideApp.Services.Abstract;
+using TravelGuideApp.Models.Card;
+using TravelGuideApp.Services.Abstract.Card;
 
-namespace TravelGuideApp.Services.Concrete
+namespace TravelGuideApp.Services.Concrete.Card
 {
     public class LoginService : ILoginService
     {
-        public Task<int> CreateUserAsync(User user)
+        public Task<int> CreateUserAsync(User customer)
         {
             return null;
         }

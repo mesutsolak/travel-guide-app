@@ -1,12 +1,14 @@
-﻿namespace TravelGuideApp.Models
+﻿using Prism.Mvvm;
+
+namespace TravelGuideApp.Models
 {
-    public class BaseModel
+    public class BaseModel : BindableBase
     {
 
         public virtual void Clear()
         {
 
-            
+
         }
     }
 }

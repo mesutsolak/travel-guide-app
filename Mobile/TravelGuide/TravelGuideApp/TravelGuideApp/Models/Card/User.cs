@@ -1,4 +1,4 @@
-﻿namespace TravelGuideApp.Models
+﻿namespace TravelGuideApp.Models.Card
 {
     public class User
     {

@@ -1,8 +1,8 @@
 ﻿using Prism;
 using Prism.Ioc;
 using Prism.Unity;
-using TravelGuideApp.Services.Abstract;
-using TravelGuideApp.Services.Concrete;
+using TravelGuideApp.Services.Abstract.Card;
+using TravelGuideApp.Services.Concrete.Card;
 using TravelGuideApp.ViewModels;
 using TravelGuideApp.Views;
 using Xamarin.Forms;
@@ -16,7 +16,7 @@ namespace TravelGuideApp
             InitializeComponent();
         }
 
-        public App(IPlatformInitializer platformInitializer) :base(platformInitializer)
+        public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
         {
             InitializeComponent();
         }

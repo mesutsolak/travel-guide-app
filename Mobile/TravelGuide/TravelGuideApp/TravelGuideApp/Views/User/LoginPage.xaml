@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TravelGuideApp.Views.LoginPage">
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#F4F4F4" 
+                     HorizontalOptions="FillAndExpand" 
+                     VerticalOptions="FillAndExpand">
+
+            <Button Text="Ayarlar"
+                    HorizontalOptions="EndAndExpand" />
+
+            <StackLayout HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="CenterAndExpand"
+                         Spacing="15"
+                         Padding="15">
+
+                <Label Text="Giriş Yap" 
+                       FontSize="25"
+                       HorizontalTextAlignment="Center" />
+
+                <Label Text="Kullanıcı Adı" />
+                <Entry Text="{Binding LoginModel.UserName,Mode=TwoWay}" />
+
+                <Label Text="Parola" />
+                <Entry IsPassword="True" 
+                       Text="{Binding LoginModel.Password,Mode=TwoWay}" />
+
+
+                <Grid HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition  />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="0"
+                            Grid.Row="0"
+                            BackgroundColor="#ff334e"
+                            TextColor="White"
+                            FontSize="15"
+                            Text="Giriş Yap" 
+                            Command="{Binding LoginCommand}" />
+
+                    <Button Grid.Column="1"
+                            Grid.Row="0"
+                            Text="Temizle"
+                            FontSize="15"
+                            BackgroundColor="#123458"
+                            TextColor="White"
+                            Command="{Binding LoginClearCommand}" />
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           HorizontalTextAlignment="Start"
+                           Text="Şifreni mi Unuttun ?" >
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgetPassword}" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="End"
+                           Text="Hesabın mı yok ?">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                </Grid>
+
+            </StackLayout>
+
+            <Label Text="V.1.0" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,0,0,10"
+                   VerticalOptions="End" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

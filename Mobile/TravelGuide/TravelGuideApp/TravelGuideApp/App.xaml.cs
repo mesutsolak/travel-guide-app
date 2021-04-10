@@ -18,7 +18,7 @@ namespace TravelGuideApp
 
         public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
         {
-            InitializeComponent();
+
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -33,6 +33,7 @@ namespace TravelGuideApp
 
         protected async override void OnInitialized()
         {
+            InitializeComponent();
             await NavigationService.NavigateAsync(nameof(LoginPage));
         }
 

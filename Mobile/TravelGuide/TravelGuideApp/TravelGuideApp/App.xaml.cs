@@ -1,16 +1,40 @@
-﻿using System;
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using TravelGuideApp.Services.Abstract.Card;
+using TravelGuideApp.Services.Concrete.Card;
+using TravelGuideApp.ViewModels;
+using TravelGuideApp.Views.Card;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TravelGuideApp
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             InitializeComponent();
+        }
 
-            MainPage = new MainPage();
+        public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
+        {
+
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterInstance(typeof(ILoginService), new LoginService());
+
+
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+
+        }
+
+        protected async override void OnInitialized()
+        {
+            InitializeComponent();
+            await NavigationService.NavigateAsync(nameof(LoginPage));
         }
 
         protected override void OnStart()

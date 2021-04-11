@@ -4,7 +4,7 @@ using Prism.Unity;
 using TravelGuideApp.Services.Abstract.Card;
 using TravelGuideApp.Services.Concrete.Card;
 using TravelGuideApp.ViewModels;
-using TravelGuideApp.Views;
+using TravelGuideApp.Views.Card;
 using Xamarin.Forms;
 
 namespace TravelGuideApp

@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace TravelGuideApp.Views
+namespace TravelGuideApp.Views.Card
 {
     public partial class RegisterPage : ContentPage
     {

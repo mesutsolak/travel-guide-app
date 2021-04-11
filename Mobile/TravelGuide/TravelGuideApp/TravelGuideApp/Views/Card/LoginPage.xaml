@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:prism="http://prismlibrary.com"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:icons="clr-namespace:TravelGuideApp.Utils.Icons"
-             x:Class="TravelGuideApp.Views.LoginPage">
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TravelGuideApp.Views.Card.LoginPage">
 
     <ContentPage.Content>
 
@@ -24,23 +24,18 @@
                          Padding="15">
 
                 <Label Text="{x:Static icons:FontAwesomeIcons.Users}" 
-                       FontSize="40" 
+                       FontSize="35" 
                        HorizontalOptions="CenterAndExpand"
                        FontFamily="{StaticResource FontAwesomeSolid}" />
 
-
-
-                <Label Text="Giriş Yap" 
-                       FontSize="25"
-                       HorizontalTextAlignment="Center" />
-
                 <Label Text="Kullanıcı Adı" />
+
                 <Entry Text="{Binding LoginModel.UserName,Mode=TwoWay}" />
 
                 <Label Text="Parola" />
+
                 <Entry IsPassword="True" 
                        Text="{Binding LoginModel.Password,Mode=TwoWay}" />
-
 
                 <Grid HorizontalOptions="FillAndExpand" 
                       VerticalOptions="FillAndExpand">

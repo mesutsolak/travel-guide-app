@@ -4,7 +4,7 @@ using Prism.Services;
 using System.Windows.Input;
 using TravelGuideApp.Models.Card;
 using TravelGuideApp.Services.Abstract.Card;
-using TravelGuideApp.Views;
+using TravelGuideApp.Views.Card;
 
 namespace TravelGuideApp.ViewModels
 {

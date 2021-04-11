@@ -32,9 +32,9 @@
             <OnPlatform x:TypeArguments="x:String"
                         x:Key="MaterialIcons">
                 <On Platform="iOS" 
-                    Value="Material Design Icons"></On>
+                    Value="Material Design Icons" />
                 <On Platform="Android"
-                    Value="MaterialDesignIcons.ttf#Material Design Icons"></On>
+                    Value="MaterialDesignIcons.ttf#Material Design Icons" />
             </OnPlatform>
 
         </ResourceDictionary>

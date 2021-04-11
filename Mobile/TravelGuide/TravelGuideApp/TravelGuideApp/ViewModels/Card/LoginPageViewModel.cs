@@ -82,7 +82,7 @@ namespace TravelGuideApp.ViewModels
         });
 
 
-        public ICommand RegisterCommand => new DelegateCommand<User>(async (user) =>
+        public ICommand RegisterCommand => new DelegateCommand(async () =>
         {
             await _navigationService.NavigateAsync(nameof(RegisterPage));
         });

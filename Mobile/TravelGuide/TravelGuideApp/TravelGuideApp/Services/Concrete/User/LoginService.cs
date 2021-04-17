@@ -6,6 +6,7 @@ namespace TravelGuideApp.Services.Concrete.Card
 {
     public class LoginService : ILoginService
     {
+
         public Task<int> CreateUserAsync(User customer)
         {
             return null;

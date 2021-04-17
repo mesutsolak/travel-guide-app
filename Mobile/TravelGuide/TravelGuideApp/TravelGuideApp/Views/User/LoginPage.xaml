@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:prism="http://prismlibrary.com"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:icons="clr-namespace:TravelGuideApp.Utils.Icons"
-             x:Class="TravelGuideApp.Views.LoginPage">
+<custom:TravelGuidePage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:prism="http://prismlibrary.com"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:icons="clr-namespace:TravelGuideApp.Utils.Icons"
+                        xmlns:markup="clr-namespace:TravelGuideApp.Utils.MarkupExtensions"
+                        xmlns:custom="clr-namespace:TravelGuideApp.CustomControls"
+                        prism:ViewModelLocator.AutowireViewModel="True"
+                        x:Class="TravelGuideApp.Views.LoginPage">
 
-    <ContentPage.Content>
+    <custom:TravelGuidePage.Content>
 
         <StackLayout BackgroundColor="#F4F4F4" 
                      HorizontalOptions="FillAndExpand" 
@@ -14,9 +16,14 @@
 
             <Label Text="{x:Static icons:FontAwesomeIcons.Cog}"
                    Margin="0,10,0,0"
-                   TextColor="Red"
                    FontFamily="{StaticResource FontAwesomeSolid}" 
-                   HorizontalOptions="EndAndExpand" />
+                   HorizontalOptions="EndAndExpand">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SettingsCommand}" />
+                </Label.GestureRecognizers>
+
+            </Label>
 
             <StackLayout HorizontalOptions="FillAndExpand" 
                          VerticalOptions="CenterAndExpand"
@@ -28,16 +35,10 @@
                        HorizontalOptions="CenterAndExpand"
                        FontFamily="{StaticResource FontAwesomeSolid}" />
 
-
-
-                <Label Text="Giriş Yap" 
-                       FontSize="25"
-                       HorizontalTextAlignment="Center" />
-
-                <Label Text="Kullanıcı Adı" />
+                <Label Text="{markup:Translate UserName}" />
                 <Entry Text="{Binding LoginModel.UserName,Mode=TwoWay}" />
 
-                <Label Text="Parola" />
+                <Label Text="{markup:Translate Password}" />
                 <Entry IsPassword="True" 
                        Text="{Binding LoginModel.Password,Mode=TwoWay}" />
 
@@ -60,12 +61,12 @@
                             BackgroundColor="#ff334e"
                             TextColor="White"
                             FontSize="15"
-                            Text="Giriş Yap" 
+                            Text="{markup:Translate Login}" 
                             Command="{Binding LoginCommand}" />
 
                     <Button Grid.Column="1"
                             Grid.Row="0"
-                            Text="Temizle"
+                            Text="{markup:Translate Clear}"
                             FontSize="15"
                             BackgroundColor="#123458"
                             TextColor="White"
@@ -74,7 +75,7 @@
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            HorizontalTextAlignment="Start"
-                           Text="Şifreni mi Unuttun ?" >
+                           Text="{markup:Translate ForgetPassword}" >
 
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ForgetPassword}" />
@@ -85,7 +86,7 @@
                     <Label Grid.Row="1"
                            Grid.Column="1"
                            HorizontalTextAlignment="End"
-                           Text="Hesabın mı yok ?">
+                           Text="{markup:Translate Register}">
 
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RegisterCommand}" />
@@ -102,5 +103,5 @@
                    VerticalOptions="End" />
 
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </custom:TravelGuidePage.Content>
+</custom:TravelGuidePage>

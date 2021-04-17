@@ -1,8 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using TravelGuideApp.CustomControls;
 
 namespace TravelGuideApp.Views
 {
-    public partial class RegisterPage : ContentPage
+    public partial class RegisterPage : TravelGuidePage
     {
         public RegisterPage()
         {

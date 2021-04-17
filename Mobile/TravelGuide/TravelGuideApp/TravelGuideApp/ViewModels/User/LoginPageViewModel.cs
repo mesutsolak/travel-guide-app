@@ -5,6 +5,7 @@ using System.Windows.Input;
 using TravelGuideApp.Models.Card;
 using TravelGuideApp.Services.Abstract.Card;
 using TravelGuideApp.Views;
+using TravelGuideApp.Views.App;
 
 namespace TravelGuideApp.ViewModels
 {
@@ -12,7 +13,6 @@ namespace TravelGuideApp.ViewModels
     {
         #region Fields
 
-        private readonly INavigationService _navigationService;
         private readonly ILoginService _loginService;
         private readonly IPageDialogService _pageDialogService;
 
@@ -61,7 +61,6 @@ namespace TravelGuideApp.ViewModels
                                   ILoginService loginService,
                                   IPageDialogService pageDialogService) : base(navigationService)
         {
-            _navigationService = navigationService;
             _loginService = loginService;
             _pageDialogService = pageDialogService;
         }
@@ -90,6 +89,11 @@ namespace TravelGuideApp.ViewModels
         public ICommand ForgetPassword => new DelegateCommand(() =>
         {
 
+        });
+
+        public ICommand SettingsCommand => new DelegateCommand(async () =>
+        {
+            await _navigationService.NavigateAsync(nameof(SettingsPage));
         });
 
 

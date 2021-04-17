@@ -7,11 +7,11 @@ namespace TravelGuideApp.ViewModels
     public class BaseViewModel : BindableBase, IInitialize, INavigationAware, IDestructible, IPageLifecycleAware
     {
 
-        protected INavigationService NavigationService { get; private set; }
+        protected INavigationService _navigationService { get; private set; }
 
         public BaseViewModel(INavigationService navigationService)
         {
-            NavigationService = navigationService;
+            _navigationService = navigationService;
         }
 
         public virtual void Destroy()
